@@ -1,10 +1,13 @@
-function Home(){
+let Home=({navigationChangeHandler})=>{
 let onHeaderClick = (e)=>{
     e.preventDefault();
     if (e.target.tagName === 'A'){
-        let url = new URL(e.target.href)
-        console.log(url.pathname);
+        let url = new URL(e.target.href);
+        navigationChangeHandler(url.pathname);
+        
+      
     }
+    
 }
     return(
         <header onClick={onHeaderClick}>
